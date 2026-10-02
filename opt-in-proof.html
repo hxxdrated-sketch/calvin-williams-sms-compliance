@@ -2,11 +2,54 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Opt-In Proof</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SMS Opt-In</title>
+<style>
+  body { font-family: -apple-system, Segoe UI, Roboto, sans-serif; max-width: 680px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a; line-height: 1.6; background: #fff; }
+  header { border-bottom: 1px solid #ddd; padding-bottom: 16px; margin-bottom: 28px; }
+  header a.brand { font-size: 22px; font-weight: 700; color: #1a1a1a; text-decoration: none; }
+  nav { margin-top: 8px; font-size: 15px; }
+  nav a { margin-right: 16px; color: #0b57d0; }
+  h1 { font-size: 26px; margin: 0 0 16px; }
+  h2 { font-size: 18px; margin: 28px 0 8px; }
+  a { color: #0b57d0; }
+  .box { border: 1px solid #ddd; border-radius: 8px; padding: 20px; margin: 20px 0; }
+  .sample { background: #f5f5f5; border-radius: 8px; padding: 12px 16px; font-family: Consolas, monospace; font-size: 14px; }
+  label { display: block; margin: 12px 0 6px; font-weight: 600; }
+  input[type=tel] { width: 100%; max-width: 320px; padding: 10px; font-size: 16px; border: 1px solid #aaa; border-radius: 6px; box-sizing: border-box; }
+  .consent { display: flex; gap: 10px; align-items: flex-start; font-weight: normal; }
+  .consent input { margin-top: 5px; }
+  button { margin-top: 16px; padding: 10px 22px; font-size: 16px; border-radius: 6px; border: 1px solid #888; background: #f0f0f0; cursor: pointer; }
+  footer { border-top: 1px solid #ddd; margin-top: 40px; padding-top: 16px; font-size: 14px; color: #555; }
+</style>
 </head>
 <body>
-<p>Opt-In Proof.</p>
-<img src="opt-in-proof.png" alt="Sample SMS consent form with an opt-in checkbox" style="max-width:100%;">
-<p>This is a sample consent form showing how an end user opts in to receive SMS trading alerts tied to their own Alpaca account, by checking the consent checkbox and submitting the form.</p>
+<header>
+  <a class="brand" href="index.html">Calvin Williams Trading Alerts</a>
+  <nav><a href="index.html">Home</a><a href="terms.html">Terms</a><a href="privacy-policy.html">Privacy Policy</a><a href="opt-in-proof.html">Opt-In</a></nav>
+</header>
+<main>
+<h1>SMS Opt-In and Consent Form</h1>
+<p>This is the form used to opt in to Calvin Williams Trading Alerts. Text messages are sent only to numbers that complete it.</p>
+<form class="box" onsubmit="event.preventDefault(); document.getElementById('done').hidden = false;">
+  <label for="phone">Mobile phone number</label>
+  <input id="phone" name="phone" type="tel" placeholder="(555) 555-5555" required>
+  <label class="consent">
+    <input type="checkbox" name="consent" required>
+    <span>I agree to receive automated SMS trading alerts (order fills, price alerts and account notifications) from Calvin Williams Trading Alerts at the number above. Message frequency varies. Message and data rates may apply. Reply STOP to cancel or HELP for help. Consent is not a condition of purchase. See the <a href="terms.html">Terms and Conditions</a> and <a href="privacy-policy.html">Privacy Policy</a>.</span>
+  </label>
+  <button type="submit">Submit</button>
+  <p id="done" hidden>Thank you. You are opted in to Calvin Williams Trading Alerts.</p>
+</form>
+<p>The consent box is unchecked by default and must be checked by the user to submit the form.</p>
+<h2>Sample messages</h2>
+<p class="sample">Calvin Williams Trading Alerts: You are subscribed to trading alerts. Msg frequency varies. Msg &amp; data rates may apply. Reply HELP for help, STOP to cancel.</p>
+<p class="sample">Calvin Williams Trading Alerts: BUY 10 SPY filled at $571.20. Reply STOP to opt out.</p>
+<p class="sample">Calvin Williams Trading Alerts: You have been unsubscribed and will receive no further messages.</p>
+</main>
+<footer>
+  Calvin Williams Trading Alerts is operated by Calvin Williams.<br>
+  Contact: <a href="mailto:movi3box1st@gmail.com">movi3box1st@gmail.com</a>
+</footer>
 </body>
 </html>
